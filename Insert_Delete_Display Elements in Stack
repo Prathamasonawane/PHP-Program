@@ -1,0 +1,32 @@
+a)Intsert an element in stack
+b)Delete an element from stack
+c)Display the content of stack
+<br><br><br>
+<?php
+$a=array(10,20,30,40);
+	print_r($a);
+   array_push($a,55);
+     echo("<br>After Push:");
+	print_r($a);
+   $val=array_pop($a);
+     echo("<br>Poped Value=".$val);
+     echo("<br>After Pop:");
+	print_r($a);
+   array_unshift($a,55);
+     echo("<br>After Insert:");
+	print_r($a);
+   $val=array_shift($a);
+     echo("<br>Deleted Value=".$val);
+     echo("<br>After Deleted(shift):");
+	print_r($a);
+?>
+
+Output:-
+
+Array ( [0] => 10 [1] => 20 [2] => 30 [3] => 40 )
+After Push:Array ( [0] => 10 [1] => 20 [2] => 30 [3] => 40 [4] => 55 )
+Poped Value=55
+After Pop:Array ( [0] => 10 [1] => 20 [2] => 30 [3] => 40 )
+After Insert:Array ( [0] => 55 [1] => 10 [2] => 20 [3] => 30 [4] => 40 )
+Deleted Value=55
+After Deleted(shift):Array ( [0] => 10 [1] => 20 [2] => 30 [3] => 40 )
