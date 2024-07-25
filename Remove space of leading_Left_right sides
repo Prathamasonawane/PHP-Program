@@ -1,0 +1,12 @@
+Que:-Remove the leading whitespace from the given string...
+<br>
+<?php
+  $s="  cdj rbnb  ";
+ // $s=trim($s);  //remove blank space from left to right side..
+ // $s=ltrim($s); //remove blank space from left side..
+  $s=rtrim($s);   //remove blank space from right side..
+echo("<br>Length of String=".strlen($s));
+?>
+
+output:-
+Length of String=10
