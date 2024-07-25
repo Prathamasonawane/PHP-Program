@@ -1,0 +1,18 @@
+Que:-Write a function to count the total number of vowels i.e(a,e,i,o,u)from the String...
+<br><br>
+<?php
+function count_vowels($s)
+{
+$c=0;
+for($i=0;$i<strlen($s);$i++)
+  {
+    if($s[$i]=="a"||$s[$i]=='e'||$s[$i]=='i'||$s[$i]=='o'||$s[$i]=='u')
+	$c=$c+1;
+  }
+echo("<br>Total Vowels Count=".$c);
+}
+count_vowels("Radhanagariiiiii");
+?>
+
+Output:-
+Total Vowels Count=10
