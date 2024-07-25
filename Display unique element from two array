@@ -1,0 +1,11 @@
+<?php
+  $a=array(10,20,30);
+  $b=array(10,20,30,44);
+     $d=array_merge($a,$b);
+     $d=array_unique($d);
+       print_r($d);
+?>
+
+
+//Output:-
+Array ( [0] => 10 [1] => 20 [2] => 30 [6] => 44 )
