@@ -1,0 +1,29 @@
+Que:-Write  a php script to sort the following associative..
+array=array("Sophia"=>"31","Jocob"=>"41","William"=>"39","Ramesh"=>"40")
+a)ascending order sort by value
+b)ascending order sort by key
+c)descending order sort by value
+d)descending order sort by key
+<br><br><br>
+<?php
+$a=array("Sophia"=>"31","Jocob"=>"41","William"=>"39","Ramesh"=>"40");
+	asort($a);
+	print_r($a);
+	echo("<br>");
+	ksort($a);
+	print_r($a);
+	echo("<br>");
+	arsort($a);
+	print_r($a);
+	echo("<br>");
+	krsort($a);
+	print_r($a);
+	echo("<br>");
+?>
+
+//Output:-
+
+Array ( [Sophia] => 31 [William] => 39 [Ramesh] => 40 [Jocob] => 41 )
+Array ( [Jocob] => 41 [Ramesh] => 40 [Sophia] => 31 [William] => 39 )
+Array ( [Jocob] => 41 [Ramesh] => 40 [William] => 39 [Sophia] => 31 )
+Array ( [William] => 39 [Sophia] => 31 [Ramesh] => 40 [Jocob] => 41 )
