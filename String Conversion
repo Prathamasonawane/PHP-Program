@@ -1,0 +1,19 @@
+Que:-Convert the given string to lowercase and thento title case...
+<br>
+<?php
+  $s="rbnb college bcs";
+  $s1=strtoupper($s);
+echo("<br> Uppercase String=".$s1);
+  $s1=strtolower($s);
+echo("<br> Lowercase String=".$s1);
+  $s1=ucfirst($s);
+echo("<br> First Letter is in Uppercase=".$s1);
+  $s1=ucwords($s);
+echo("<br> Title Case String=".$s1);
+?>
+
+Output:-
+Uppercase String=RBNB COLLEGE BCS
+Lowercase String=rbnb college bcs
+First Letter is in Uppercase=Rbnb college bcs
+Title Case String=Rbnb College Bcs
