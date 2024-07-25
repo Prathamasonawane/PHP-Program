@@ -1,0 +1,11 @@
+<?php
+$s1="rbnb college cdj college KVM college";
+$s2="college";
+  $k=strpos($s1,$s2);
+    if($k==false)
+echo("<br> Substring Not Found");
+    else
+echo("<br> Substring Found at Position=$k");
+?>
+Output:-
+Substring Found at Position=5
