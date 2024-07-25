@@ -1,0 +1,10 @@
+<?php
+  $a=array(10,20,30);
+  $b=array(11,22,33,44);
+  $c=array("java","php");
+     $d=array_merge($a,$b,$c);
+       print_r($d);
+?>
+
+Output:-
+Array ( [0] => 10 [1] => 20 [2] => 30 [3] => 11 [4] => 22 [5] => 33 [6] => 44 [7] => java [8] => php )
