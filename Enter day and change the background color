@@ -1,0 +1,32 @@
+Que:-Write a php script to change the background color of the browser using a switch
+stmt according to the day of the week....
+<br>
+<html><body>
+	<form method="post" action="day_color.php">
+	  Enter Day:
+	<input type="text"name="t1"><br>
+	<input type="submit"value="ok">
+	</form>
+</body></html>
+<?php
+$d=$_POST["t1"];
+switch($d)
+{
+  case "Monday":echo("<body bgcolor='red'>");
+		break;
+  case "Tuesday":echo("<body bgcolor='blue'>");
+		break;
+  case "Wednesday":echo("<body bgcolor='pink'>");
+		break;
+  case "Thursday":echo("<body bgcolor='yellow'>");
+		break;
+  case "Friday":echo("<body bgcolor='green'>");
+		break;
+  case "Saturday":echo("<body bgcolor='Black'>");
+		break;
+  case "Sunday":echo("<body bgcolor='purple'>");
+		break;
+  }
+?>
+
+Output:-
