@@ -1,0 +1,9 @@
+<?php
+  $s1="India is my country .I love my India";
+  $s2="India";
+  $s3="Bharat";
+   $s4=str_replace($s2,$s3,$s1);
+echo("Replace String=".$s4);
+?>
+Output:-
+Replace String=Bharat is my country .I love my Bharat
