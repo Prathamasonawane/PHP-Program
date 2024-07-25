@@ -1,0 +1,8 @@
+<?php
+$s="rbnb";
+$s1=strrev($s);
+echo("<br>String=".$s1);
+?>
+
+Output:-
+String=bnbr
