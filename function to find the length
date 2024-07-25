@@ -1,0 +1,13 @@
+QUE:-Write a function to find the length of given string without using built in function ...
+<br><br>
+<?php 
+function string_length($s)
+{
+  for($i=0;isset($s[$i]);$i++);
+    return $i;
+}
+echo("String Length=".string_length("Prathama"));
+?>
+
+Output:-
+String Length=8
