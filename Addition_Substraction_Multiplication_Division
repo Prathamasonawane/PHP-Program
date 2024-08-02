@@ -1,0 +1,55 @@
+Que=Write a PHP script for the following.Design a form to accept two number
+ from the user.Give option to choose the arithmetic operation (use radio button).
+Display the result on the form...
+
+<br><br>
+<html>
+  <body>
+   <form method="post" action="#">
+      Enter Number 1:
+        <input type="number" name="t1"><br>
+      Enter Number 2:
+        <input type="number" name="t2"><br>
+	  <input type="radio" name="r1" value="1"> Addition <br>
+	  <input type="radio" name="r1" value="2"> Substraction <br>
+	  <input type="radio" name="r1" value="3"> Multiplication <br>
+	  <input type="radio" name="r1" value="4"> Division <br>
+	<input type="submit">
+     </form>
+   </body>
+</html>
+<?php
+$a=$_POST["t1"];
+$b=$_POST["t2"];
+$ch=$_POST["r1"];
+switch($ch)
+{
+case 1:$c=$a+$b;
+	echo("<br> Addtion=".$c);
+	break;
+case 2:$c=$a-$b;
+	echo("<br> Substraction=".$c);
+	break;
+case 3:$c=$a*$b;
+	echo("<br> Multiplication=".$c);
+	break;
+case 4:$c=$a/$b;
+	echo("<br> Division=".$c);
+	break;
+}
+?>
+
+Output=
+Enter Number 1: 10
+
+Enter Number 2: 5
+
+ Addition
+ Substraction
+ Multiplication
+ Division
+
+Addtion=15
+Substraction=5
+Multiplication=50
+Division=2
