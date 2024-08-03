@@ -1,0 +1,26 @@
+Que:-Replace some character / word from given big string with the given small string at specific
+position
+<br>
+<br>
+<br>
+<?php
+$s1=substr_replace("rbnb college Shrirampur","",5,7);
+echo($s1);
+
+$s1=substr_replace("rbnb college Shrirampur","bcs ",5,0);
+echo("<br>$s1");
+
+$s1=substr_replace("rbnb college Shrirampur","school",5,7);
+echo("<br>$s1");
+
+$s1=substr_replace("rbnb college Shrirampur","BCS",5);
+echo("<br>$s1");
+
+?>
+=================================================================
+Output:-
+
+rbnb Shrirampur
+rbnb bcs college Shrirampur
+rbnb school Shrirampur
+rbnb BCS
