@@ -1,0 +1,71 @@
+Que:-Write a PHP script for the following .Design a form to accept a String.
+Write a function to count the total number of Vowels(a,e,i,o,u)from thr string.
+Show the occurences of each vowels from the string.Check whether the 
+given string is a palindrome or not,without using built in function.
+<br>
+<br> 
+
+<html>
+ <body>
+   <form method="post" action="#">
+	Enter String:
+	 <input type="text" name="t1"><br>
+	 <input type="submit" value="Ok">
+   </form>
+  </body>
+</html>
+<?php
+  $s=$_POST["t1"];
+  Count_Vowels($s);
+  Palindrome($s);
+  function Count_Vowels($s)
+   {
+	$c1=0; $c2=0; $c3=0; $c4=0; $c5=0;
+	for($i=0;$i<strlen($s);$i++)
+	 {
+	   if($s[$i]=='a'||$s[$i]=='A')
+	     $c1=$c1+1;
+	   if($s[$i]=='e'||$s[$i]=='E')
+	     $c2=$c2+1;
+	   if($s[$i]=='i'||$s[$i]=='I')
+	     $c3=$c3+1;
+	   if($s[$i]=='o'||$s[$i]=='O')
+	     $c4=$c4+1;
+	   if($s[$i]=='u'||$s[$i]=='U')
+	     $c5=$c5+1;
+	 }
+	echo("<br> a count=".$c1);
+	echo("<br> e count=".$c2);
+	echo("<br> i count=".$c3);
+	echo("<br> o count=".$c4);
+	echo("<br> u count=".$c5);
+   }
+
+function Palindrome($s)
+  {
+    $f=0;
+     for($i=0,$j=strlen($s)-1;$i<strlen($s);$i++,$j--)
+      {
+        if($s[$i]!=$s[$j])
+	 {
+	    $f=1;
+	     break;
+	 }
+      }
+      if($f==0)
+	echo("<br> String is Palindrome");
+      else
+	echo("<br> String is Not Palindrome");
+  }
+?>
+==============================================================================================
+Output:-
+Enter String: Nayan
+
+
+a count=2
+e count=0
+i count=0
+o count=0
+u count=0
+String is Palindrome
