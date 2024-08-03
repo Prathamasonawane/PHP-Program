@@ -1,0 +1,46 @@
+Que=Write a php script to perform the following operation on string.
+i)Compare string 2 with string 3.
+ii)Convert all the string to upper case
+iii)Convert all the string to lower case
+<br>
+<br>
+<html>
+  <body>
+   <form method="post" action="#">
+	Enter String 1:
+   <input type="text" name="t1"><br>
+	Enter String 2:
+   <input type="text" name="t2"><br>
+   <input type="submit" value="Ok">
+   </form>
+  </body>
+</html>
+<?php
+  $s1=$_POST["t1"];
+  $s2=$_POST["t2"];
+  $k=strcmp($s1,$s2);
+   if($k==0)
+     echo("<h1> String are same");
+   else if($k>0)
+     echo("<h1>First String:$s1 is greater");
+   else
+     echo("<h1>Second String:$s2 is greater");
+
+     echo("<br>Uppercase String1=".strtoupper($s1));
+     echo("<br>Lowercase String1=".strtolower($s1));
+
+     echo("<br>Uppercase String2=".strtoupper($s2));
+     echo("<br>Lowercase String2=".strtolower($s2));
+?>
+====================================================================
+Output:-
+
+Enter String 1: Prathama
+
+Enter String 2:Arti 
+
+First String:Prathama is greater
+Uppercase String1=PRATHAMA
+Lowercase String1=prathama
+Uppercase String2=ARTI
+Lowercase String2=arti
