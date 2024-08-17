@@ -1,0 +1,31 @@
+Define an array . Find the element from the array that matches the given value using
+appropriate search function
+<br>
+<br>
+<html>
+ <body>
+  <form method="post" action="#">
+     Enter value to Search:
+  <input type="text" name="t1"><br>
+  <input type="submit">
+    </form>
+   </body>
+</html>
+<?php
+  $val=$_POST["t1"];
+   $a=array(10,20,30,40,50);
+    echo("<br> Original Array:");
+      print_r($a);
+  $p=in_array($val,$a);
+   if($p==true)
+     echo("<br>Element Found...");
+   else
+     echo("<br>Element Not Found...");
+?>
+==========================================================
+Output:-
+Enter value to Search: 50
+
+
+Original Array:Array ( [0] => 10 [1] => 20 [2] => 30 [3] => 40 [4] => 50 )
+Element Found...
