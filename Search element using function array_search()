@@ -1,0 +1,12 @@
+<?php
+  $a=array(10,20,30,40,50,60,70);
+  $p=array_search(40,$a);
+     if($p==false)
+  echo("Not found...");
+     else
+  echo("Element Found At Position=$p");
+?>
+=========================================================
+Output:-
+Element Found At Position=3
+    OR
