@@ -1,0 +1,8 @@
+<?php
+  $s1="Java,PHP,TCS,Python,Cpp";
+  $a=preg_split("/,/",$s1);
+   print_r($a);
+?>   
+=======================================
+Output:-
+Array ( [0] => Java [1] => PHP [2] => TCS [3] => Python [4] => Cpp )
