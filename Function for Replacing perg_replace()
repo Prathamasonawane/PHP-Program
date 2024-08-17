@@ -1,0 +1,8 @@
+<?php
+  $s1="cdj collage rbnb collage JTS collage";
+  $ans=preg_replace("/collage/","school",$s1);
+   echo("Replace String=".$ans);
+?>
+====================================================
+Output:-
+Replace String=cdj school rbnb school JTS school
