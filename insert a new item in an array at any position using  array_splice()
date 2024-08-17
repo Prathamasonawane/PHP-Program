@@ -1,0 +1,36 @@
+Write a PHP script that insert a new item in an array at any position
+(Hint:-use array_splice())
+<br>
+<br>
+<html>
+ <body>
+  <form method="post"action="#">
+    Enter value to insert:
+  <input type="text" name="t1"><br>
+    Enter Position:-
+  <input type="text" name="t2"><br>
+  <input type="submit">
+   </form>
+  </body>
+</html>
+<?php
+ $val=$_POST["t1"];
+ $p=$_POST["t2"];
+ $a=array(10,20,30,40,50);
+   echo("<br>Original Array=");
+ print_r($a);
+   array_splice($a,$p,0,$val);
+   echo("<br>Array=");
+ print_r($a);
+?>
+========================================================
+Output:-
+Write a PHP script that insert a new item in an array at any position (Hint:-use array_splice())
+
+Enter value to insert: 100
+
+Enter Position:1 
+
+
+Original Array=Array ( [0] => 10 [1] => 20 [2] => 30 [3] => 40 [4] => 50 )
+Array=Array ( [0] => 10 [1] => 100 [2] => 20 [3] => 30 [4] => 40 [5] => 50 )
