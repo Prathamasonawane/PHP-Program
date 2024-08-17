@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <form method="post" action="#">
+      Enter Email_Id:
+	<input type="text" name="t1"><br>
+	<input type="submit">
+	</form>
+   </body>
+</html>
+<?php
+  $s1=$_POST["t1"];
+  $p="/^[a-z]+[0-9]*\@[a-z]+\.[com|in]/";
+    echo("String=$s1<br>");
+  if(preg_match($p,$s1))
+    echo("Valid String...");
+  else
+    echo("Invalid String...");
+?>
+======================================================================
+Output:-
+Enter Email_Id: 
+
+String=ps03201000@gmail.com
+Valid String...
+  Or
+Enter Email_Id: 
+
+String=0129ps028@gmail.com
+Invalid String...
