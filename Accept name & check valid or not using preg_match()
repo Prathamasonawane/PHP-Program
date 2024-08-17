@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <form method="post" action="match.php">
+      Enter Name:
+	<input type="text" name="t1"><br>
+	<input type="submit">
+	</form>
+   </body>
+</html>
+<?php
+  $s1=$_POST["t1"];
+  $p="/^([a-zA-Z]{5})+$/";
+    echo("String=$s1<br>");
+  if(preg_match($p,$s1))
+    echo("Valid String...");
+  else
+    echo("Invalid String...");
+?>
+=======================================================================
+Output:-
+Enter Name: Aarti
+
+String=Aarti
+Valid String...
+   OR
+Enter Name: Prathama
+
+String=Prathama
+Invalid String...
