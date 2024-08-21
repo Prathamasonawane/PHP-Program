@@ -1,0 +1,31 @@
+<html>
+  <body>
+   <form method="post" action="#">
+	Enter Emp No to search:
+    <input type="Text" name="t1"><br>
+    <input type="submit" value="Search Record">
+   </form>
+  </body>
+</html>
+<?php
+  $con=mysqli_connect("localhost","root","");
+    if(!$con)
+   die("Error in Connection...");
+   $no=$_POST["t1"];
+   mysqli_query($con,"use rbnb");
+   $res=mysqli_query($con,"select * from emp where eno=$no");
+    if($r=mysqli_fetch_array($res))
+     {
+       echo("<br>Name=".$r[1]);
+       echo("<br>Salary=".$r[2]);
+     }
+     else
+     echo("Not Found...");
+     mysqli_close($con);
+?>
+==========================================================================
+OUTPUT:-
+Enter Emp No to search: 3
+search record..
+Name=Sham
+Salary=40000
