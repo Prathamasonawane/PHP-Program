@@ -1,0 +1,12 @@
+<?php
+  $con=mysqli_connect("localhost","root","");
+   if(!$con)
+    die("Error in Connection...");
+    mysqli_select_db($con,"rbnb");
+    $k=mysqli_query($con,"insert into emp values(1,'om',50000)");
+    if($k==true)
+   echo("Insert Successful..");
+?>
+====================================================
+Output:-
+Insert Successful..
