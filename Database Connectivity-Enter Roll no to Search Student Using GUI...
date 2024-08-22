@@ -1,0 +1,58 @@
+create table Student(rno int primary key,sname varchar(20),per float);
+insert into Student values(1,'Om',80.00);
+insert into Student values(2,'Ram',80.90);
+insert into Student values(3,'Sham',77.00);
+insert into Student values(4,'Aman',90.90);
+insert into Student values(5,'Radha',70.90);
+OutPut:-
+select * from Student;
++-----+-------+------+
+| rno | sname | per  |
++-----+-------+------+
+|   1 | Om    |   80 |
+|   2 | Ram   | 80.9 |
+|   3 | Sham  |   77 |
+|   4 | Aman  | 90.9 |
+|   5 | Radha | 70.9 |
++-----+-------+------+
+---------------------------------------------------------------------------
+Que:-Enter Roll no to Search Student Using GUI...
+<br>
+<br>
+<html>
+  <body>
+     <form method="post" action="#">
+	Enter Roll No To Search:
+     <input type="number" name="t1">
+     <input type="submit" values="Search">
+     </form>
+  </body>
+</html>
+<?php
+   $con=mysqli_connect("localhost","root","");
+    if(!$con)
+   die("Error In Connection...");
+     mysqli_query($con,"Use rbnb");
+     $n=$_POST["t1"];
+      $res=mysqli_query($con,"select * from Student where rno=$n");
+    if($row=mysqli_fetch_array($res))
+      {
+	echo("<br><br>Roll No=".$row[0]);
+	echo("<br>Roll Name=".$row[1]);
+	echo("<br>Roll Per=".$row[2]);
+      }
+    else
+	echo("Record Not Found...");
+	mysqli_close($con);
+?>
+===================================================================
+Output:-
+Que:-Enter Roll no to Search Student Using GUI...
+
+Enter Roll No To Search: 2
+ 
+Search
+
+Roll No=2
+Roll Name=Ram
+Roll Per=80.9
