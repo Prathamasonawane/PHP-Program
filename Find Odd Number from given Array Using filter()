@@ -1,0 +1,16 @@
+Que:-Find Odd Number from given Array Using filter()
+<?php 
+ function check($n)
+  {
+    if($n%2==1)
+      return true;
+    else
+      return false;
+  }
+$a=array(10,11,12,13,14,15,16,17,18);
+$b=array_filter($a,"check");
+print_r($b);
+?>
+=================================================================
+Output:-
+Array ( [1] => 11 [3] => 13 [5] => 15 [7] => 17 )
