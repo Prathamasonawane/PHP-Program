@@ -1,0 +1,64 @@
+Que:-Design a GUI accept student info & insert into the database..
+<br><br><br>
+<html>
+  <Body>
+    <form method="post" action="#">
+      Enter Roll No:
+        <input type="text" name="t1"><br>
+      Enter Name:
+	<input type="text" name="t2"><br>
+      Enter Address:
+	<textarea name="t3"></textarea><br>
+      Enter Percentage:
+	<input type="text" name="t4"><br>
+	<input type="submit">
+    </form>
+  </Body>
+</html>
+<?php
+   $con=mysqli_connect("localhost","root","");
+     if($con==false)
+       die("Error in Connection...");
+	mysqli_query($con,"use BCS");
+	 $rno=$_POST["t1"];
+	 $sname=$_POST["t2"];
+	 $a=$_POST["t3"];
+	 $p=$_POST["t4"];
+	$k=mysqli_query($con,"insert into Student values($rno,'$sname','$a',$p)");
+	   if($k==true)
+	echo("Record Insert successfully...");
+	  mysqli_close($con);
+?>
+===============================================================================================================
+OUTPUT:-
+# mysql --user="root"
+MariaDB [(none)]> create database BCS;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> use BCS;
+Database changed
+MariaDB [BCS]> create table Student(rno int,sname varchar(20),address varchar(20),per float);
+Query OK, 0 rows affected (0.074 sec)
+---------------------------------------------------------------------------------------------------------------------
+Enter Roll No:1 
+
+Enter Name: Ganesh
+
+Enter Address: Pune
+
+Enter Percentage: 99.99
+
+Record Insert successfully...
+---------------------------------------------------------------------------------------------------------------------
+MariaDB [BCS]> select * from Student;
++------+--------+---------+-------+
+| rno  | sname  | address | per   |
++------+--------+---------+-------+
+|    1 | Ganesh | Pune    | 99.99 |
+|    1 | Ganesh | Pune    | 99.99 |
+|    2 | Ram    | Nagar   |    89 |
+|    3 | Om     | Dhule   |  79.9 |
+|    4 | Sai    | Shirdi  |  90.9 |
+|    5 | Sham   | Mumbai  |    80 |
++------+--------+---------+-------+
+6 rows in set (0.000 sec)
