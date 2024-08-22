@@ -1,0 +1,47 @@
+QUE:-Design a GUI to accept Student info & Delete record..
+<html>
+  <body>
+    <form method="post" action="#">
+	Enter Roll No to Delete Record:
+    <input type="text" name="t1"><br>
+    <input type="submit" value="Delete">
+    </form>
+  </body>
+</html>
+<?php
+ $con=mysqli_connect("localhost","root","");
+   if($con==false)
+    die("Error in Connection...");
+	mysqli_query($con,"use BCS");
+	    $n=$_POST["t1"];
+	$k=mysqli_query($con,"delete from Student where rno=$n");
+	  if($k==true)
+	echo("Record Delete....");
+	mysqli_close($con);
+?>
+==================================================================================
+Output:-
+Before Deleting....
+MariaDB [BCS]> select * from student;
++------+-------+------------+------+
+| rno  | sname | address    | per  |
++------+-------+------------+------+
+|    1 | Om    | Shrirampur |   66 |
+|    1 | Om    | Shrirampur |   66 |
+|    2 | Ram   | Nagar      |   89 |
+|    3 | Om    | Dhule      | 79.9 |
+|    4 | sai   | newasa     |   88 |
+|    5 | Sham  | Mumbai     |   80 |
++------+-------+------------+------+
+Enter Roll No to Delete Record:5 
+Delete
+Record Delete....
+After Deleting....
+MariaDB [BCS]> select * from student;
++------+-------+---------+------+
+| rno  | sname | address | per  |
++------+-------+---------+------+
+|    2 | Ram   | Nagar   |   89 |
+|    3 | Om    | Dhule   | 79.9 |
+|    4 | sai   | newasa  |   88 |
++------+-------+---------+------+
