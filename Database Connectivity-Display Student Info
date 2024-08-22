@@ -1,0 +1,55 @@
+create table Student(rno int primary key,sname varchar(20),per float);
+insert into Student values(1,'Om',80.00);
+insert into Student values(2,'Ram',80.90);
+insert into Student values(3,'Sham',77.00);
+insert into Student values(4,'Aman',90.90);
+insert into Student values(5,'Radha',70.90);
+OutPut:-
+select * from Student;
++-----+-------+------+
+| rno | sname | per  |
++-----+-------+------+
+|   1 | Om    |   80 |
+|   2 | Ram   | 80.9 |
+|   3 | Sham  |   77 |
+|   4 | Aman  | 90.9 |
+|   5 | Radha | 70.9 |
++-----+-------+------+
+---------------------------------------------------------------------------------------
+Que:-Display Student Info
+<?php
+	$con=mysqli_connect("localhost","root","");
+	  if(!$con)
+	die("Error in Connection...");
+	mysqli_query($con,"use rbnb");
+	$res=mysqli_query($con,"select * from Student");
+	  while($row=mysqli_fetch_array($res))
+	{
+	  echo("<br><br>Roll No=".$row[0]);
+	  echo("<br>Name=".$row[1]);
+	  echo("<br>Per=".$row[2]);
+	}
+      mysqli_close($con);
+?>
+==================================================================
+Output:-
+
+Roll No=1
+Name=Om
+Per=80
+
+Roll No=2
+Name=Ram
+Per=80.9
+
+Roll No=3
+Name=Sham
+Per=77
+
+Roll No=4
+Name=Aman
+Per=90.9
+
+Roll No=5
+Name=Radha
+Per=70.9
