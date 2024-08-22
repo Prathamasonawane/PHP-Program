@@ -1,0 +1,56 @@
+Que:-Design a GUI accept student info & update into the database..
+<br><br><br>
+<html>
+  <Body>
+    <form method="post" action="#">
+      Enter Roll No:
+        <input type="text" name="t1"><br>
+      Enter Name:
+	<input type="text" name="t2"><br>
+      Enter Address:
+	<textarea name="t3"></textarea><br>
+      Enter Percentage:
+	<input type="text" name="t4"><br>
+	<input type="submit" value="update">
+    </form>
+  </Body>
+</html>
+<?php
+   $con=mysqli_connect("localhost","root","");
+     if($con==false)
+       die("Error in Connection...");
+	mysqli_query($con,"use BCS");
+	 $rno=$_POST["t1"];
+	 $name=$_POST["t2"];
+	 $a=$_POST["t3"];
+	 $p=$_POST["t4"];
+	$k=mysqli_query($con,"update Student set sname='$name',address='$a',per=$p where rno=$rno");
+	   if($k==true)
+	echo("Record Update successfully...");
+           else
+	echo("Not Found..");
+	  mysqli_close($con);
+?>
+===========================================================================================================================
+Enter Roll No:1 
+
+Enter Name:om 
+
+Enter Address: shrirampur
+
+Enter Percentage: 90.90
+
+Record Update successfully...
+--------------------------------------------------------------------------------
+MariaDB [BCS]> select * from Student;
++------+-------+------------+------+
+| rno  | sname | address    | per  |
++------+-------+------------+------+
+|    1 | Om    | Shrirampur |   66 |
+|    1 | Om    | Shrirampur |   66 |
+|    2 | Ram   | Nagar      |   89 |
+|    3 | Om    | Dhule      | 79.9 |
+|    4 | sai   | newasa     |   88 |
+|    5 | Sham  | Mumbai     |   80 |
++------+-------+------------+------+
+6 rows in set (0.000 sec)
