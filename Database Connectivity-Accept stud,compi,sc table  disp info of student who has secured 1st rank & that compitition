@@ -1,0 +1,124 @@
+Que:-Consider the following Entities & their relationships
+	Student(stud_id,name,class)
+	Compitition(c_no,c_name,type)
+Relationship between student & compititionis Many-Many with attribute rank & year.
+Create a RDB in 3NF for the above & solve the following above database to write 
+script in PHP to accept a compition name from user& display information of student
+who has secured 1st rank & in that compitition..
+
+/*
+create table Student1(stud_id int primary key,name varchar(20),class varchar(20));
+
+insert into Student1 values(1,'Om','FY');
+insert into Student1 values(2,'Sai','SY');
+insert into Student1 values(3,'Ram','TY');
+insert into Student1 values(4,'Sham','TY');
+insert into Student1 values(5,'Aman','SY');
+insert into Student1 values(6,'Nayan','FY');
+
+
+create table Compitition(c_no int primary key,c_name varchar(20),type varchar(20));
+
+insert into Compitition values(101,'Dancing','National');
+insert into Compitition values(102,'Singing','State');
+insert into Compitition values(103,'Swiming','National');
+insert into Compitition values(104,'Drawing','State');
+insert into Compitition values(105,'Chess','National');
+insert into Compitition values(106,'Queze','State');
+
+create table SC(stud_id int references Student1,c_no int references Compitition, rank
+int,year int);
+
+insert into SC values(1,101,1,2021);
+insert into SC values(2,102,2,2021);
+insert into SC values(3,103,3,2021);
+insert into SC values(4,104,3,2021);
+insert into SC values(3,105,2,2022);
+insert into SC values(6,106,1,2022);
+insert into SC values(1,106,2,2023);
+insert into SC values(2,105,1,2024);
+insert into SC values(3,104,3,2022);
+insert into SC values(4,102,1,2022);
+
+select * from Student1;
+select * from Compitition;
+select * from SC;
+
+ select * from Student1;
++---------+-------+-------+
+| stud_id | name  | class |
++---------+-------+-------+
+|       1 | Om    | FY    |
+|       2 | Sai   | SY    |
+|       3 | Ram   | TY    |
+|       4 | Sham  | TY    |
+|       5 | Aman  | SY    |
+|       6 | Nayan | FY    |
++---------+-------+-------+
+6 rows in set (0.001 sec)
+
+MariaDB [BCS]> select * from Compitition;
++------+---------+----------+
+| c_no | c_name  | type     |
++------+---------+----------+
+|  101 | Dancing | National |
+|  102 | Singing | State    |
+|  103 | Swiming | National |
+|  104 | Drawing | State    |
+|  105 | Chess   | National |
+|  106 | Queze   | State    |
++------+---------+----------+
+6 rows in set (0.001 sec)
+
+MariaDB [BCS]> select * from SC;
++---------+------+------+------+
+| stud_id | c_no | rank | year |
++---------+------+------+------+
+|       1 |  101 |    1 | 2021 |
+|       2 |  102 |    2 | 2021 |
+|       3 |  103 |    3 | 2021 |
+|       4 |  104 |    3 | 2021 |
+|       3 |  105 |    2 | 2022 |
+|       6 |  106 |    1 | 2022 |
+|       1 |  106 |    2 | 2023 |
+|       2 |  105 |    1 | 2024 |
+|       3 |  104 |    3 | 2022 |
+|       4 |  102 |    1 | 2022 |
++---------+------+------+------+
+*/
+
+<HTML>
+  <BODY>
+    <form method ="post" action="#">
+	Enter Compitition Name:-
+     <input type="text" name="t1"><br>
+     <input type="submit" values="Ok">
+    </form
+  </BODY
+</HTML>
+<?php
+	$con=mysqli_connect("localhost","root","");
+	  if(!$con)
+	   die("Error in Connection...");
+	mysqli_select_db($con,"BCS");
+	 $cn=$_POST["t1"];
+	 $res=mysqli_query($con,"select Student1.* from Student1,Compitition,SC where
+				Student1.stud_id=SC.stud_id and Compitition.c_no=SC.c_no
+				and rank=1 and c_name='$cn'");
+	while($row=mysqli_fetch_array($res))
+	 {
+	  echo("<br> Student Id=".$row[0]);
+	  echo("<br> Student Name=".$row[1]);
+	  echo("<br> Student Class=".$row[2]);
+	}
+	mysqli_close($con);
+
+?>
+=====================================================================================
+Output:-
+Enter Compitition Name:- Chess
+Submit
+
+Student Id=2
+Student Name=Sai
+Student Class=SY
