@@ -1,0 +1,17 @@
+Que:-Write a PHP script to create an employee table using attribute employee   
+     name,address joining date & salary .If a table is created then display the appropriate msg
+	otherwise end the php script...
+
+
+<?php
+	$con=mysqli_connect("localhost","root","");
+	  if(!$con)
+	    die("Error in Connection...");
+	mysqli_select_db($con,"rbnb");
+	mysqli_query($con,"create table Employee1(eno int,ename varchar(20),address varchar(20),join_date date,sal float)");
+	  echo("Table Created.....");
+	mysqli_close($con);
+?>
+=======================================================
+Output:-
+Table Created.....//see table in mysql shell using command  select * from Employee1;
