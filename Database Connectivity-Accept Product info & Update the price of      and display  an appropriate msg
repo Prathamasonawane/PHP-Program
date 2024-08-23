@@ -1,0 +1,58 @@
+Que:-Write a PHP script to accept product number from the user.Update the price of
+     and display  an appropriate message...
+/*create table product(pno int primary key,pname varchar(20),price float);
+
+insert into product values(1,'Pen',5);
+insert into product values(2,'Pencil',7);
+insert into product values(3,'Book',50);
+
+select * from product;
++-----+--------+-------+
+| pno | pname  | price |
++-----+--------+-------+
+|   1 | Pen    |     5 |
+|   2 | Pencil |     7 |
+|   3 | Book   |    50 |
++-----+--------+-------+
+*/
+<br><br>
+<html>
+ <body>
+   <form method="post" action="#">
+	Enter Product No:
+   <input type="number" name="t1"><br>
+	Enter New Price:
+   <input type="text" name="t2"><br>
+   <input type="submit" value="Update">
+   </form>
+ </body>
+</html>
+<?php
+	$con=mysqli_connect("localhost","root","");
+	  if(!$con)
+	    die("Error in Connetcion...");
+	mysqli_select_db($con,"rbnb");
+	  $no=$_POST["t1"];
+	  $p=$_POST["t2"];
+	mysqli_query($con,"update product set price=$p where pno=$no");
+	  echo("Record Update...");
+	mysqli_close($con);
+?>
+=====================================================================================
+Output:-
+Enter Product No: 1
+
+Enter New Price: 10
+Update
+Record Update...
+
+//see table on mysql shell
+
+MariaDB [rbnb]> select * from product;
++-----+--------+-------+
+| pno | pname  | price |
++-----+--------+-------+
+|   1 | Pen    |    10 |
+|   2 | Pencil |     7 |
+|   3 | Book   |    50 |
++-----+--------+-------+
