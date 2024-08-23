@@ -1,0 +1,17 @@
+Que:-Accept given No. find odd no.from them Using walk()
+
+<?php
+   function check($n)
+    {
+	if($n%2==1)
+	  echo("<br>Odd Number=".$n);
+    }
+	$a=array(11,12,13,14,15,16,17,18,19,20);
+	array_walk($a,"check");
+?>
+================================================================================
+Odd Number=11
+Odd Number=13
+Odd Number=15
+Odd Number=17
+Odd Number=19
