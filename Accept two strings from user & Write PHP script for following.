@@ -1,0 +1,51 @@
+Slip8: Design an HTML form to accept two strings from the user. 
+Write a PHP script for the following. 
+a. Find whether the small string appears at the start of the large string.
+b. Find the position of the small string in the big string.
+c.Compare both the string for first n characters, also the 
+comparison should not be case sensitive. 
+<html> 
+<body>
+ <form method="post"action="#"> 
+	enter first string:
+<input type="text" name="t1"><br> 
+	enter second string:
+<input type="text" name="t2"><br> 
+<input type="submit" value="submit"> 
+</form> 
+</body>
+ </html>
+<?php 
+$a=$_POST["t1"];
+$b=$_POST["t2"];  
+// $len1=strlen($a);
+ //$len2=strlen($b); 
+echo("Length $len1  $len2"); 
+$pos=strpos($a,$b);
+ if($pos==0)
+ {  
+echo("the small string appears at the start of the large string<br>");
+ }  
+else 
+{  
+echo("small string does not appear at the start of the large string<br>");
+} 
+$pos=strpos($a,$b); 
+   echo("the small string appears at $pos position<br>"); 
+if(strcasecmp($a,$b)==0) 
+   echo("Both Strings are equal<br>"); 
+else if(strcasecmp($a,$b)>0)  
+   echo("first string bigger<br>");
+else 
+   echo("second string is bigger<br>");
+?> 
+=========================================================================================
+Output:-
+enter first string:Prathama
+
+enter second string:Arti
+
+Length 0 4the small string appears at the start of the large string
+the small string appears at position
+second string is bigger
+
