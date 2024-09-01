@@ -1,0 +1,80 @@
+Que:-Write a program to read two files from user and appends content of first files into secound files..
+<br>
+<html lang="en">
+<head>
+ <title>File Handling</title>
+</head>
+<body>
+ <form action="#" method="post">
+ Enter File name to read 
+	<input type="text" name="f1">
+ Enter File name to write
+ 	<input type="text" name="f2">
+ <input type="submit" value="Copy">
+ </form>
+</body>
+</html>
+
+
+<?php
+$f1=$_POST['f1'];
+$f2=$_POST['f2'];
+$fp1=fopen($f1,"r");
+$fp2=fopen($f2,"a");
+$size=filesize($f1);
+$str=fread($fp1,$size);
+fwrite($fp2,$str,$size);
+echo "Append Successfull";
+?>
+--------------------------------------------------------------------------------------------
+===a1.txt===
+ARTI VAISHNAVI PRATHAMA ASHWINI 	  .
+COLLEGE INFO				                .
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR	.
+BCS DEPARTMENT			              	.
+COLLEGE INFO			                	.
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR	.
+BCS DEPARTMENT		               		.
+.....................................
+COLLEGE INFO
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR
+BCS DEPARTMENTARTI VAISHNAVI PRATHAMA ASHWINI 
+COLLEGE INFO
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR
+BCS DEPARTMENT
+COLLEGE INFO
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR
+BCS DEPARTMENT
+-----------------------------------------------------------------------
+Output:-
+Enter File name to read= a1
+ Enter File name to write =a2
+copy
+ 
+
+===a2===
+COLLEGE INFO
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR
+BCS DEPARTMENTARTI VAISHNAVI PRATHAMA ASHWINI 
+COLLEGE INFO
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR
+BCS DEPARTMENT
+COLLEGE INFO
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR
+BCS DEPARTMENTARTI VAISHNAVI PRATHAMA ASHWINI 	.
+COLLEGE INFO				.
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR	.
+BCS DEPARTMENT				.
+COLLEGE INFO				.
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR	.
+BCS DEPARTMENT				.
+.........................................
+COLLEGE INFO
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR
+BCS DEPARTMENTARTI VAISHNAVI PRATHAMA ASHWINI 
+COLLEGE INFO
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR
+BCS DEPARTMENT
+COLLEGE INFO
+Bcs FY SY TYRBNB COLLEGE SHRIRAMPUR
+BCS DEPARTMENT
