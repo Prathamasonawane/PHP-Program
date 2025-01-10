@@ -1,0 +1,69 @@
+/* Write a PHP script to change the preferences of your web page
+like font size,font color,font style,background color using COOKIES..
+Display selected setting on next web page & actual implementation .
+With new setting on third page....
+
+
+    //Page1
+
+
+<html>
+ <body>
+  <form method="post" action="Page2.php">
+  Font Style:
+    <input type="text" name="t1"><br>
+  Font Size:
+    <input type="text" name="t2"><br>
+ Font Color:
+    <input type="text" name="t3"><br>
+ Background Color:
+    <input type="text" name="t4"><br>
+    <input type="submit" value="Next">
+</form></body>
+</html>
+
+
+   //Page2
+
+
+<?php
+  session_start();
+    $fn=$_POST["t1"];
+    $fs=$_POST["t2"];
+    $fc=$_POST["t3"];
+    $bc=$_POST["t4"];
+
+$_SESSION["Font_Name"]=$_POST["t1"];
+$_SESSION["Font_Size"]=$fs;
+$_SESSION["Font_Color"]=$fc;
+$_SESSION["Background_color"]=$bc;
+
+echo("<br> Font Name=".$fn);
+echo("<br> Font Size=".$fs);
+echo("<br> Font Color=".$fc);
+echo("<br> Background color =".$bc);
+?>
+<html>
+ <body>
+  <form method="post" action="Page3.php">
+    <input type="submit" value="Next">
+</form>
+</body>
+</html>
+
+
+  //Page3
+
+
+<?php
+ session_start();
+ $fn=$_SESSION["Font_Name"];
+$fs=$_SESSION["Font_Size"];
+$fc=$_SESSION["Font_Color"];
+$x=$_SESSION["Background_color"];
+
+echo("<Body BackGround=$x>");
+echo("<Font color=$fc Size=$fs Face=$fn>");
+echo("WelCome To RBNB.....");
+?>
+
