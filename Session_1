@@ -1,0 +1,66 @@
+/*Create a form to accept customer information (name,addr,MoNo.).
+Once the Customer information is accepted product information
+in the next form (ProName,QTY,Rate).Generate the bill for 
+the next form Bill should contain the customer information and the
+information of the product entered......*/
+
+//Customer.php
+<html>
+  <form method="post" action="Product.php">
+	<h1>Online Shopping Customer Form</h1>
+	  Customer Name:
+	<input type="text" name="t1"><br>
+	  Customer Address:
+	<textarea name="t2"></textarea><br>
+	  Customer Moblie:
+	<input type="text" name="t3"><br>
+	<input type="submit" value="Next">
+  </form>
+</html>
+
+
+  //Product.php
+<?php
+  session_start();
+  $_SESSION["cn"]=$_POST["t1"];
+  $_SESSION["Address"]=$_POST["t2"];
+  $_SESSION["ph"]=$_POST["t3"];
+?>
+<html>
+ <form method="post" action="Bill.php">
+   <h1>Online Shopping Product Form</h1>
+	Product Name:
+	  <input type="text" name="t4"><br>
+	Quantity:
+	   <input type="text" name="t5"><br>
+	Rate:
+	   <input type="text" name="t6"><br>
+	   <input type="submit" value="Next">
+  </form>
+</html>
+
+
+
+
+   //Bill.php
+<?php
+ session_start();
+ $cname=$_SESSION["cn"];
+ $add=$_SESSION["Address"];
+ $phno=$_SESSION["ph"];
+
+ $pname=$_POST["t4"];
+ $qty=$_POST["t5"];
+ $rate=$_POST["t6"];
+
+$tot=$qty*$rate;
+echo("<br> Customer Name=".$cname);
+echo("<br> Customer Address=".$add);
+echo("<br> Customer Phone Number=".$phno);
+echo("<br> Product Name=".$pname);
+echo("<br> Quantity=".$qty);
+echo("<br> Rate=".$rate);
+echo("<br> Total Bill Amount=".$tot);
+ ?>
+
+
