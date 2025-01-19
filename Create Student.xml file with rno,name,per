@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <Student>
+  <info>
+    <rno>1</rno>
+    <name>Om</name>
+    <per>88.90</per>
+  </info>
+  <info>
+    <rno>2</rno>
+    <name>Ram</name>
+    <per>70.90</per>
+  </info>
+  <info>
+    <rno>3</rno>
+    <name>Sham</name>
+    <per>90</per>
+  </info>
+</Student>
